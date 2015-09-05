@@ -1,0 +1,4 @@
+[package]
+name = "bastet"
+version = "0.1.0"
+authors = ["Daniel Atkinson <hourd.tasa@gmail.com>"]
