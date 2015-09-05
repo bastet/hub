@@ -2,11 +2,6 @@ fn main() {
     println!("Hello, world!");
 }
 
-#[test]
-fn it_works() {
-}
-
-
 pub fn add_two(a: i32) -> i32 {
     a + 2
 }
