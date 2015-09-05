@@ -1,2 +1,2 @@
 # bastet-rust
-[![Build Status](https://travis-ci.org/datkinson/bastet-rust.svg?branch=master)](https://travis-ci.org/datkinson/bastet-rust)
+[![Build Status](https://travis-ci.org/bastet/bastet-rust.svg?branch=feature%2Frustful)](https://travis-ci.org/bastet/bastet-rust)
