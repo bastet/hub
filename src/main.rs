@@ -1,12 +1,26 @@
+extern crate iron;
+#[macro_use]
+extern crate router;
+
+use iron::prelude::*;
+use iron::status;
+use router::Router;
+
 fn main() {
-    println!("Hello, world!");
-}
+    let router = router!(
+        get "*" => not_found_handler,
+        get "/" => handler,
+        get "/:query" => handler
+    );
 
-pub fn add_two(a: i32) -> i32 {
-    a + 2
-}
+    Iron::new(router).http("localhost:3000").unwrap();
 
-#[test]
-fn it_works() {
-    assert_eq!(4, add_two(2));
+    fn handler(req: &mut Request) -> IronResult<Response> {
+        let ref query = req.extensions.get::<Router>().unwrap().find("query").unwrap_or("/");
+        Ok(Response::with((status::Ok, *query)))
+    }
+
+    fn not_found_handler(_: &mut Request) -> IronResult<Response> {
+        Ok(Response::with((status::NotFound, "Invalid Api Route")))
+    }
 }
