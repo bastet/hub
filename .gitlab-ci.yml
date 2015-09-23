@@ -1,5 +1,5 @@
 job_test:
-  scripts:
+  script:
     - cargo test
   tags:
     - rust
