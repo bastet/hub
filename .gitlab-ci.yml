@@ -1,3 +1,5 @@
+before_script:
+  - ls -lah
 job_test:
   script:
     - cargo test
