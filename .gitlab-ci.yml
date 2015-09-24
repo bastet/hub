@@ -3,5 +3,3 @@ before_script:
 job_test:
   script:
     - cargo test
-  tags:
-    - rust
