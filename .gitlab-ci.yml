@@ -1,5 +1,5 @@
 before_script:
-  - ls -lah
+  - cargo build
 stages:
   - build
   - test
