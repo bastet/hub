@@ -20,9 +20,8 @@ job_deploy:
   stage: deploy
   script:
     - ls
-    - echo $CI_BUILD_NAME
-    - echo $CI_BUILD_TAG
-    - echo $CI_BUILD_REF
+    - echo $CI_BUILD_TRIGGERED
+    - echo $CI_BUILD_REF_NAME
   tags:
     - rust
     - bastet.link
