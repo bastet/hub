@@ -19,9 +19,8 @@ job_test:
 job_deploy:
   stage: deploy
   script:
-    - ls
-    - echo $CI_BUILD_TRIGGERED
-    - echo $CI_BUILD_REF_NAME
+    - mkdir -p $release_route/linux/$CI_BUILD_REF_NAME
+    - cp target/debug/bastet $release_route/linux/$CI_BUILD_REF_NAME/bastet
   tags:
     - rust
     - bastet.link
