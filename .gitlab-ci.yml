@@ -1,7 +1,28 @@
 before_script:
   - ls -lah
+stages:
+  - build
+  - test
+  - deploy
+job_build:
+  stage: build
+  script:
+    - cargo build
+  tags:
+    - rust
 job_test:
+  stage: test
   script:
     - cargo test
   tags:
     - rust
+job_deploy:
+  stage: deploy
+  script:
+    - ls
+    - echo $CI_BUILD_NAME
+    - echo $CI_BUILD_TAG
+    - echo $CI_BUILD_REF
+  tags:
+    - rust
+    - bastet.link
